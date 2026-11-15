@@ -23,10 +23,14 @@ jobs:
       run:
         working-directory: bank
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        id: dotnet
         with:
           dotnet-version: 10.0.x
+      # The runner image also ships a newer SDK; pin the one the Dockerfiles use
+      - run: dotnet new globaljson --sdk-version "${{ steps.dotnet.outputs.dotnet-version }}" --force
+      - run: dotnet --version
       - run: dotnet test BankSystem.sln
 
   shop-api:
@@ -36,8 +40,8 @@ jobs:
       run:
         working-directory: shop/api/tests
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
           cache: pip
