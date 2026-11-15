@@ -3,15 +3,15 @@ namespace BankSystem.Common
     public static class NotificationMessages
     {
         public const string BankAccountCreated = "Bank account created successfully";
-        public const string BankAccountCreateError = "An error occured while creating bank account";
+        public const string BankAccountCreateError = "An error occurred while creating bank account";
 
         public const string CardCreatedSuccessfully = "Card created successfully";
-        public const string CardCreateError = "An error occured while creating card";
+        public const string CardCreateError = "An error occurred while creating card";
         public const string CardUpdatedSuccessfully = "Card updated successfully";
-        public const string CardUpdateError = "An error occured while updating card";
+        public const string CardUpdateError = "An error occurred while updating card";
         public const string CardDoesNotExist = "Such card does not exist";
         public const string CardDeletedSuccessfully = "Card deleted successfully";
-        public const string CardDeleteError = "An error occured while deleting card";
+        public const string CardDeleteError = "An error occurred while deleting card";
 
         public const string TryAgainLaterError =
             "Oops! Something went wrong! Please try again later. If this error continues to occur, please contact our support center";
@@ -46,7 +46,7 @@ namespace BankSystem.Common
         public const string TwoFactorAuthenticationDisabled = "Two-factor authentication disabled successfully";
 
         public const string TwoFactorAuthenticationDisableError =
-            "An error occured while disabling two-factor authentication";
+            "An error occurred while disabling two-factor authentication";
 
         public const string SessionExpired = "Session has expired. Please log in again.";
 
