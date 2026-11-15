@@ -51,7 +51,7 @@ docker compose -f bank/docker-compose.test.yml run --rm --build bank_api_unit   
 
 Every service has a `healthcheck` in its compose file (not in the Dockerfiles): the apps answer `GET /health` (liveness only), `bank_oracle` logs in as `CentralApi`, the last user `users.sh` creates, and `depends_on` waits for `service_healthy`.
 
-Each stack loads its own env file through `env_file` (`kyc/kyc.env`, `bank/bank.env`, `shop/shop.env`; the client secrets in `kyc/client.env` go to all three), which holds connection strings, inter-service URLs, RSA keys and every other setting; `appsettings.json` only has logging defaults, and `ASPNETCORE_ENVIRONMENT=Development` is set in the Dockerfiles (`Section__Key`: `ConnectionStrings__BankSystem`, `__CentralApi`, `__Redis`; `shop.env` uses plain names such as `DATABASE_URL`, and `ORACLE_PASSWORD` in `bank.env` is the password of SYS and both Oracle users). Apps listen on port 5000 inside the containers, the bank's nginx on 80 and Keycloak on 8080.
+Each stack loads its own env file through `env_file` (`kyc/kyc.env`, `bank/bank.env`, `shop/shop.env`; the client secrets in `kyc/client.env` go to all three), which holds connection strings, inter-service URLs, RSA keys and every other setting; `appsettings.json` only has logging defaults, and `ASPNETCORE_ENVIRONMENT=Development` is set in the Dockerfiles (`Section__Key`: `ConnectionStrings__BankSystem`, `__CentralApi`, `__Redis`, `__RabbitMq`; `shop.env` uses plain names such as `DATABASE_URL`, and `ORACLE_PASSWORD` in `bank.env` is the password of SYS and both Oracle users). Apps listen on port 5000 inside the containers, the bank's nginx on 80 and Keycloak on 8080.
 
 ## Architecture
 

@@ -1,4 +1,4 @@
-# Build context: core (see docker-compose.yml)
+# Build context: bank (see docker-compose.yml)
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
