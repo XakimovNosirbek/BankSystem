@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generates an RSA key pair in .NET <RSAKeyValue> XML format (as used in appsettings.json).
+# Generates an RSA key pair in .NET <RSAKeyValue> XML format (as used in bank/bank.env and shop/shop.env).
 # Usage: ./rsa-keygen.sh [bits]   (default: 4096)
 set -euo pipefail
 

@@ -20,8 +20,8 @@ class Settings(BaseSettings):
     shop_client_secret: str = ""
     site_key: str = ""
     central_api_public_key: str = ""
-    central_api_payment_url: str = "http://localhost:8080/pay"
-    central_api_card_payments_url: str = "http://localhost:8080/api/CardPayments"
+    central_api_payment_url: str = "http://localhost:8081/api/pay"
+    central_api_card_payments_url: str = "http://localhost:8081/api/CardPayments"
     reconcile_interval_seconds: int = 60
     rabbit_url: str = ""
 

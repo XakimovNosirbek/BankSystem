@@ -70,10 +70,10 @@ dotnet run --project app/src/BankSystem.Web
 
 ### Tests
 
-The tests run on EF Core InMemory and need no database.
+The tests run on EF Core InMemory and need no database. Run these from the repository root.
 
 ```bash
-dotnet test app/tests/BankSystem.UnitTests
+dotnet test bank/app/tests/BankSystem.UnitTests
 docker compose -f bank/docker-compose.test.yml up --build --abort-on-container-failure
 docker compose -f bank/docker-compose.test.yml run --rm --build bank_api_unit   # one project: bank_{web,api}_{unit,integration}
 ```
